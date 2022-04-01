@@ -1,12 +1,34 @@
-import * as React from 'react';
+import { Box, Button, CircularProgress, makeStyles, Paper, Typography } from '@material-ui/core';
 
-export interface ILoginPageProps {
-}
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexFlow: 'row nowrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '100vh',
+  },
 
-export default function LoginPage (props: ILoginPageProps) {
+  box: {
+    padding: theme.spacing(3),
+  },
+}));
+
+export default function LoginPage() {
+  const classes = useStyles();
   return (
-    <div>
-      LoginPage
+    <div className={classes.root}>
+      <Paper elevation={1} className={classes.box}>
+        <Typography variant="h5" component="h1">
+          Student Management
+        </Typography>
+
+        <Box mt={4}>
+          <Button fullWidth variant="contained" color="primary" >
+          Fake Login
+          </Button>
+        </Box>
+      </Paper>
     </div>
   );
 }
